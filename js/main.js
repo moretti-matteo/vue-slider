@@ -28,9 +28,10 @@ const app = new Vue({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
-        ]
+        ],
     },
     methods: {
+
         nextImg() {
             if (this.currentIndex === this.images.length - 1) {
                 this.currentIndex = 0;
@@ -50,5 +51,14 @@ const app = new Vue({
         changeImg(i) {
             this.currentIndex = i;
         }
+    },
+    mounted() {
+        const timer = setInterval(() => {
+            this.nextImg();
+
+        }, 3000);
+
     }
 });
+
+
