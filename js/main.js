@@ -53,17 +53,15 @@ const app = new Vue({
         changeImg(i) {
             this.currentIndex = i;
         },
-        timer() {
-
+        
+        startTimer() {
+            this.hover = false;
             const timer = setInterval(() => {
                 this.nextImg();
                 if (this.hover) clearInterval(timer);
             }, 3000);
         },
-        startTimer() {
-            this.hover = false;
-            this.timer();
-        },
+
         stopTimer() {
             this.hover = true;
         }
