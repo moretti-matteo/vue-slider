@@ -3,7 +3,8 @@ const app = new Vue({
     hover: false,
     data: {
         currentIndex: 0,
-        hover: false,
+        //hover: false,
+        timer:undefined,
         images: [
             {
                 src: 'img/01.jpg',
@@ -53,17 +54,18 @@ const app = new Vue({
         changeImg(i) {
             this.currentIndex = i;
         },
-        
+
         startTimer() {
-            this.hover = false;
-            const timer = setInterval(() => {
+          //  this.hover = false;
+            this.timer = setInterval(() => {
                 this.nextImg();
-                if (this.hover) clearInterval(timer);
+                //if (this.hover) clearInterval(timer);
             }, 3000);
         },
 
         stopTimer() {
-            this.hover = true;
+            //this.hover = true;
+            clearInterval(this.timer);
         }
 
     },
