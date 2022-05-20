@@ -1,7 +1,9 @@
 const app = new Vue({
     el: '#app',
+    hover: false,
     data: {
         currentIndex: 0,
+        hover: false,
         images: [
             {
                 src: 'img/01.jpg',
@@ -50,14 +52,25 @@ const app = new Vue({
 
         changeImg(i) {
             this.currentIndex = i;
+        },
+        timer() {
+
+            const timer = setInterval(() => {
+                this.nextImg();
+                if (this.hover) clearInterval(timer);
+            }, 1000);
+        },
+        startTimer() {
+            this.hover = false;
+            this.timer();
+        },
+        stopTimer() {
+            this.hover = true;
         }
+
     },
     mounted() {
-        const timer = setInterval(() => {
-            this.nextImg();
-
-        }, 3000);
-
+        this.startTimer();
     }
 });
 
