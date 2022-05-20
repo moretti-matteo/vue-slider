@@ -58,7 +58,7 @@ const app = new Vue({
             const timer = setInterval(() => {
                 this.nextImg();
                 if (this.hover) clearInterval(timer);
-            }, 1000);
+            }, 3000);
         },
         startTimer() {
             this.hover = false;

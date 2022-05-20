@@ -10,8 +10,9 @@
 </head>
 
 <body>
-        <div id="app" class="container" @mouseover="stopTimer()" @mouseleave="startTimer()">
-        <div class="items">
+        <div id="app" class="container" >
+
+        <div class="items" @mouseover="stopTimer()" @mouseleave="startTimer()">
 
             <div class="item active">
                 <img v-bind:src="images[currentIndex].src" alt="">
